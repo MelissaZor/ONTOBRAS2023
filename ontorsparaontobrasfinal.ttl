@@ -1,0 +1,354 @@
+@prefix : <http://OntoRSparaontobras#>.
+@prefix gufo: <http://purl.org/nemo/gufo#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+<http://OntoRSparaontobras> rdf:type owl:Ontology;
+    owl:imports gufo:.
+:JudicialProcess rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Judicial Process"@en.
+:FederalJudge rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Federal Judge"@en.
+:Appellant rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
+    rdfs:label "Appellant"@en.
+:Appellee rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
+    rdfs:label "Appellee"@en.
+:NaturalPerson rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Natural Person"@en.
+:JuridicalPerson rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Juridical Person"@en.
+:Party rdf:type owl:Class, gufo:RoleMixin, owl:NamedIndividual;
+    rdfs:label "Party"@en.
+:AttorneyCounsel rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Attorney/Counsel"@en.
+:Person rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Person"@en.
+:Lawyer rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Lawyer"@en.
+:PublicConsel rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Public Consel"@en.
+:Petition rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Petition"@en.
+:Appeal rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Appeal"@en.
+:RequestForStandardizingTheInterpretationOfAFederalLawRS rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Request For Standardizing the Interpretation of a Federal Law (RS)"@en.
+:Decision rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Event;
+    rdfs:label "Decision"@en.
+:AppellateDecisionOnSFCA rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:label "Appellate Decision on SFCA"@en.
+:GrantedAndAdmittedRS rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Granted and Admitted RS"@en.
+:OAB rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Quality;
+    rdfs:label "OAB"@en.
+:Paradigm rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Event;
+    rdfs:label "Paradigm"@en.
+:SuperiorCourtOfJusticeSTJ rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Superior Court of Justice (STJ)"@en.
+:UnanimousOpinion rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Quality;
+    rdfs:label "Unanimous opinion"@en.
+:ByAMajorityVote rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Quality;
+    rdfs:label "By a majority vote"@en.
+:JudgedRSOnTNU rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Judged RS on TNU"@en.
+:AppellateDecisionOnRS rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:label "Appellate Decision on RS"@en.
+:PrevailingOpinionRS rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Event;
+    rdfs:label "Prevailing Opinion RS"@en.
+:TNURapporteur rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "TNU Rapporteur"@en.
+:FederalJudgeTNUMember rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Federal Judge TNU Member"@en.
+:Minister rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Minister"@en.
+:MinisterPresidentOfTNU rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Minister-President of TNU"@en.
+:MonocraticAdmissibilityDecision rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:label "Monocratic Admissibility Decision"@en.
+:AppellateDecision rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:label "Appellate Decision"@en.
+:TNUMember rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "TNU Member"@en.
+:AnalyzedRSByMInisterPresident rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Analyzed RS by MInister-President"@en.
+:NotHeardRSByMinisterPresident rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Not Heard RS by Minister-President"@en.
+:SuspendedRSByMinisterPresident rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Suspended RS by Minister-President"@en.
+:NotEntertainedRSByMinisterPresident rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Not Entertained RS by Minister-President"@en.
+:RSGrantedToRevokeDecisionByMinisterPresident rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "RS Granted to Revoke Decision by Minister-President"@en.
+:NotGrantedRSByMinisterPresident rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Not Granted RS by Minister-President"@en.
+:GrantedAndAdmittedRSByMinisterPresident rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Granted and Admitted RS by Minister-President"@en.
+:TNUAppealPanel rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "TNU Appeal Panel"@en.
+:NotHeardRSByTNU rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Not Heard RS by TNU"@en.
+:SuspendedRSByTNU rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Suspended RS by TNU"@en.
+:NotEntertainedRSByTNU rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Not Entertained RS by TNU"@en.
+:RSGrantedToRevokeDecisionByTNU rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "RS Granted to Revoke Decision by TNU"@en.
+:NotGrantedRSByTNU rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Not Granted RS by TNU"@en.
+:RSGrantedAndIndicatedToAffectThemeByTNU rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "RS Granted and indicated to affect theme by TNU"@en.
+:FederalJudge rdfs:subClassOf :NaturalPerson.
+:Party rdfs:subClassOf :Person.
+:Appellant rdfs:subClassOf :Party.
+:Appellee rdfs:subClassOf :Party.
+:Lawyer rdfs:subClassOf :AttorneyCounsel.
+:PublicConsel rdfs:subClassOf :AttorneyCounsel.
+:Appeal rdfs:subClassOf :Petition.
+:RequestForStandardizingTheInterpretationOfAFederalLawRS rdfs:subClassOf :Appeal.
+:JuridicalPerson rdfs:subClassOf :Person.
+:NaturalPerson rdfs:subClassOf :Person.
+:AttorneyCounsel rdfs:subClassOf :NaturalPerson.
+:GrantedAndAdmittedRS rdfs:subClassOf :RequestForStandardizingTheInterpretationOfAFederalLawRS.
+:AppellateDecisionOnSFCA rdfs:subClassOf :AppellateDecision.
+:AnalyzedRSByMInisterPresident rdfs:subClassOf :GrantedAndAdmittedRS.
+:AppellateDecisionOnRS rdfs:subClassOf :AppellateDecision.
+:TNURapporteur rdfs:subClassOf :FederalJudgeTNUMember.
+:MinisterPresidentOfTNU rdfs:subClassOf :Minister.
+:Minister rdfs:subClassOf :NaturalPerson.
+:AppellateDecision rdfs:subClassOf :Decision.
+:FederalJudgeTNUMember rdfs:subClassOf :FederalJudge, :TNUMember.
+:MinisterPresidentOfTNU rdfs:subClassOf :TNUMember.
+:TNUMember rdfs:subClassOf :NaturalPerson.
+:NotHeardRSByMinisterPresident rdfs:subClassOf :AnalyzedRSByMInisterPresident.
+:SuspendedRSByMinisterPresident rdfs:subClassOf :AnalyzedRSByMInisterPresident.
+:NotEntertainedRSByMinisterPresident rdfs:subClassOf :AnalyzedRSByMInisterPresident.
+:RSGrantedToRevokeDecisionByMinisterPresident rdfs:subClassOf :AnalyzedRSByMInisterPresident.
+:NotGrantedRSByMinisterPresident rdfs:subClassOf :AnalyzedRSByMInisterPresident.
+:GrantedAndAdmittedRSByMinisterPresident rdfs:subClassOf :AnalyzedRSByMInisterPresident.
+:JudgedRSOnTNU rdfs:subClassOf :GrantedAndAdmittedRSByMinisterPresident.
+:MonocraticAdmissibilityDecision rdfs:subClassOf :Decision.
+:NotHeardRSByTNU rdfs:subClassOf :JudgedRSOnTNU.
+:SuspendedRSByTNU rdfs:subClassOf :JudgedRSOnTNU.
+:NotEntertainedRSByTNU rdfs:subClassOf :JudgedRSOnTNU.
+:RSGrantedToRevokeDecisionByTNU rdfs:subClassOf :JudgedRSOnTNU.
+:NotGrantedRSByTNU rdfs:subClassOf :JudgedRSOnTNU.
+:RSGrantedAndIndicatedToAffectThemeByTNU rdfs:subClassOf :JudgedRSOnTNU.
+[ rdf:type owl:AllDisjointClasses ] owl:members (:JuridicalPerson :NaturalPerson).
+:number rdfs:domain :JudicialProcess;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "number"@en.
+:OAB_1 rdfs:domain :Lawyer;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "OAB"@en.
+:OABRegistrationState rdfs:domain :Lawyer;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "OAB registration state"@en.
+:attribute rdfs:domain :Petition;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "attribute"@en.
+:wasUnanimous rdfs:domain :AppellateDecisionOnSFCA;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "wasUnanimous"@en.
+:federalJudgeMediatesJudicialProcess rdf:type owl:ObjectProperty;
+    rdfs:domain :FederalJudge;
+    rdfs:range :JudicialProcess;
+    rdfs:subPropertyOf gufo:mediates.
+:judicialProcessMediatesAppellant rdf:type owl:ObjectProperty;
+    rdfs:domain :JudicialProcess;
+    rdfs:range :Appellant;
+    rdfs:subPropertyOf gufo:mediates.
+:judicialProcessMediatesAppellee rdf:type owl:ObjectProperty;
+    rdfs:domain :JudicialProcess;
+    rdfs:range :Appellee;
+    rdfs:subPropertyOf gufo:mediates.
+:represents rdf:type owl:ObjectProperty;
+    rdfs:domain :AttorneyCounsel;
+    rdfs:range :Party;
+    rdfs:label "represents"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:files rdf:type owl:ObjectProperty;
+    rdfs:domain :Party;
+    rdfs:range :Petition;
+    rdfs:label "files"@en;
+    rdfs:subPropertyOf gufo:mediates.
+:authors rdf:type owl:ObjectProperty;
+    rdfs:domain :AttorneyCounsel;
+    rdfs:range :Petition;
+    rdfs:label "authors"@en;
+    rdfs:subPropertyOf gufo:mediates.
+:judicialProcessHasPetition rdf:type owl:ObjectProperty;
+    rdfs:domain :JudicialProcess;
+    rdfs:range :Petition.
+:judicialProcessHasRequestForStandardizingTheInterpretationOfAFederalLawRs rdf:type owl:ObjectProperty;
+    rdfs:domain :JudicialProcess;
+    rdfs:range :RequestForStandardizingTheInterpretationOfAFederalLawRS.
+:appellateDecisionOnRsHasPrevailingOpinionRs rdf:type owl:ObjectProperty;
+    rdfs:domain :AppellateDecisionOnRS;
+    rdfs:range :PrevailingOpinionRS.
+:renderedDecision rdf:type owl:ObjectProperty;
+    rdfs:domain :MonocraticAdmissibilityDecision;
+    rdfs:range :MinisterPresidentOfTNU;
+    rdfs:label "rendered decision"@en;
+    rdfs:subPropertyOf gufo:participatedIn.
+:receivedBy rdf:type owl:ObjectProperty;
+    rdfs:domain :MinisterPresidentOfTNU;
+    rdfs:range :GrantedAndAdmittedRS;
+    rdfs:label "received by"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:ruledIn rdf:type owl:ObjectProperty;
+    rdfs:domain :JudgedRSOnTNU;
+    rdfs:range :AnalyzedRSByMInisterPresident;
+    rdfs:label "ruled in"@en;
+    rdfs:subPropertyOf gufo:manifestedIn.
+:voted rdf:type owl:ObjectProperty;
+    rdfs:domain :TNUMember;
+    rdfs:range :FederalJudgeTNUMember;
+    rdfs:label "voted"@en;
+    rdfs:subPropertyOf gufo:participatedIn.
+:establishesAsAParadigm rdf:type owl:ObjectProperty;
+    rdfs:domain :RequestForStandardizingTheInterpretationOfAFederalLawRS;
+    rdfs:range :AppellateDecision;
+    rdfs:label "establishes as a Paradigm"@en;
+    rdfs:subPropertyOf gufo:historicallyDependsOn.
+:distributedTo rdf:type owl:ObjectProperty;
+    rdfs:domain :GrantedAndAdmittedRSByMinisterPresident;
+    rdfs:range :TNURapporteur;
+    rdfs:label "distributed to"@en;
+    rdf:type gufo:MaterialRelationshipType.
+:tnuAppealPanelHasTnuMember rdf:type owl:ObjectProperty;
+    rdfs:domain :TNUAppealPanel;
+    rdfs:range :TNUMember.
+:renderedJudgment rdf:type owl:ObjectProperty;
+    rdfs:domain :AppellateDecisionOnRS;
+    rdfs:range :TNUAppealPanel;
+    rdfs:label "rendered judgment"@en;
+    rdfs:subPropertyOf gufo:manifestedIn.
+:ruledIn_1 rdf:type owl:ObjectProperty;
+    rdfs:domain :JudgedRSOnTNU;
+    rdfs:range :JudgedRSOnTNU;
+    rdfs:label "ruled in"@en;
+    rdfs:subPropertyOf gufo:manifestedIn.
+:prevailingOpinionRsManifestedInJudgedRsOnTnu rdf:type owl:ObjectProperty;
+    rdfs:domain :PrevailingOpinionRS;
+    rdfs:range :JudgedRSOnTNU;
+    rdfs:subPropertyOf gufo:manifestedIn.
+:isFiledAgainst rdf:type owl:ObjectProperty;
+    rdfs:domain :AppellateDecisionOnSFCA;
+    rdfs:range :RequestForStandardizingTheInterpretationOfAFederalLawRS;
+    rdfs:label "is filed against"@en;
+    rdfs:subPropertyOf gufo:historicallyDependsOn.
+:FederalJudge rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :federalJudgeMediatesJudicialProcess;
+  owl:someValuesFrom :JudicialProcess
+].
+:Appellant rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :judicialProcessMediatesAppellant ];
+  owl:someValuesFrom :JudicialProcess
+].
+:JudicialProcess rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :judicialProcessMediatesAppellant;
+  owl:someValuesFrom :Appellant
+].
+:Appellee rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :judicialProcessMediatesAppellee ];
+  owl:someValuesFrom :JudicialProcess
+].
+:JudicialProcess rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :judicialProcessMediatesAppellee;
+  owl:someValuesFrom :Appellee
+].
+:Petition rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :files ];
+  owl:someValuesFrom :Party
+].
+:Party rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :files;
+  owl:someValuesFrom :Petition
+].
+:Petition rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :authors ];
+  owl:someValuesFrom :AttorneyCounsel
+].
+:AttorneyCounsel rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :authors;
+  owl:someValuesFrom :Petition
+].
+:MinisterPresidentOfTNU rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :renderedDecision ];
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :MonocraticAdmissibilityDecision
+].
+:MonocraticAdmissibilityDecision rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :renderedDecision;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :MinisterPresidentOfTNU
+].
+:AnalyzedRSByMInisterPresident rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :ruledIn ];
+  owl:someValuesFrom :JudgedRSOnTNU
+].
+:FederalJudgeTNUMember rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :voted ];
+  owl:someValuesFrom :TNUMember
+].
+:RequestForStandardizingTheInterpretationOfAFederalLawRS rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :establishesAsAParadigm;
+  owl:someValuesFrom :AppellateDecision
+].
+:TNUAppealPanel rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :renderedJudgment ];
+  owl:someValuesFrom :AppellateDecisionOnRS
+].
+:JudgedRSOnTNU rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :ruledIn_1 ];
+  owl:someValuesFrom :JudgedRSOnTNU
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty :ruledIn_1;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :JudgedRSOnTNU
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :prevailingOpinionRsManifestedInJudgedRsOnTnu ];
+  owl:someValuesFrom :PrevailingOpinionRS
+].
+:AppellateDecisionOnSFCA rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :isFiledAgainst;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :RequestForStandardizingTheInterpretationOfAFederalLawRS
+].
