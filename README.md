@@ -17,6 +17,8 @@ Here you can find files related to the article submitted in ONTOBRAS 2023 titled
 - [Implementation](#implantacao)
 - [Authors](#autores)
 
+The ontology can be seen at "RSontoultimo.png"
+The internal regulation of TNU is the "Res586-2019"
 
 
 ## ⛏️ Necessary tools <a name = "ferramentas"></a>:
