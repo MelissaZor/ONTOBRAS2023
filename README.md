@@ -14,9 +14,9 @@ Here you can find files related to the article submitted in ONTOBRAS 2023 titled
 ## 📝 Content
 
 - [Necessary Tools](#ferramentas)
-- [Implantação](#implantacao)
-- [Autores](#autores)
-- [Considerações Finais](#consideracoes)
+- [Implementation](#implantacao)
+- [Authors](#autores)
+- [Final Considerations](#consideracoes)
 
 
 ## ⛏️ Necessary tools <a name = "ferramentas"></a>:
