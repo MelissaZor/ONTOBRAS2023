@@ -16,7 +16,7 @@ Here you can find files related to the article submitted in ONTOBRAS 2023 titled
 - [Necessary Tools](#ferramentas)
 - [Implementation](#implantacao)
 - [Authors](#autores)
-- [Final Considerations](#consideracoes)
+
 
 
 ## ⛏️ Necessary tools <a name = "ferramentas"></a>:
@@ -31,10 +31,10 @@ It´s necessary to install:
 
 
 ## ✍️ Authors <a name = "autores"></a>:
+blind
 
 
 
-## 🎉 Final Considerations <a name = "consideracoes"></a>
 
 
 
