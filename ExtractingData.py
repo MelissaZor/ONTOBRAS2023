@@ -19,7 +19,7 @@ print(num_arquivos)
 
 g = Graph()
 
-cnj = Namespace('http://OntoRSontobras23#')
+cnj = Namespace('http://ontors.com.br/#')
 
 while counter != num_arquivos:
 
