@@ -19,7 +19,7 @@ print(num_arquivos)
 
 g = Graph()
 
-cnj = Namespace('http://ontojur.com.br/JudicialProcess/')
+cnj = Namespace('http://OntoRSontobras23#')
 
 while counter != num_arquivos:
 
@@ -59,7 +59,7 @@ while counter != num_arquivos:
 
     g.add((JudicialProcess, RDF.type, cnj.JudicialProcess))
     g.add((JudicialProcess, cnj.number, Literal(numeroProcesso)))
-    g.add((TNURapporteur, RDF.type, cnj.Rapporteur))
+    g.add((TNURapporteur, RDF.type, cnj.TNURapporteur))
     g.add((TNURapporteur, RDFS.label, Literal(TNURapporteurName)))
     g.add((JudicialProcess, cnj.distributedTo, Literal(TNURapporteur)))
     #g.add((JudicialProcess, cnj.temNome, Literal(nomeRecurso)))
@@ -146,7 +146,6 @@ while counter != num_arquivos:
         for representanteReu in div_parte_re.find_all('span', {'class': 'nome_parte_representante'}):
         
             nomeRepresentanteReu = representanteReu.text.strip()
-            nomeRepresentanteReu = calculate_md5_hash(nomeRepresentanteReu)
 
             AttorneyName = nomeRepresentanteReu
 
@@ -155,6 +154,9 @@ while counter != num_arquivos:
             print(match)
 
             if match:
+
+                AttorneyNameHash = calculate_md5_hash(nomeRepresentanteReu)
+
                 oab_string = match.group(0)
                 #oab_uri = URIRef(cnj['oab/' + quote(oab_string.split()[-1])])  # criar nova URI para a OAB
 
@@ -165,7 +167,7 @@ while counter != num_arquivos:
                 AttorneyCounsel = cnj['AttorneyCounsel/' + oab_string.split()[-1]]
 
                 g.add((AttorneyCounsel, RDF.type, cnj.AttorneyCounsel))
-                g.add((AttorneyCounsel, RDFS.label, Literal(AttorneyName)))
+                g.add((AttorneyCounsel, RDFS.label, Literal(AttorneyNameHash)))
                 g.add((AttorneyCounsel, cnj.OAB_1, Literal(oab_string.split()[-1])))
 
 
@@ -200,20 +202,21 @@ while counter != num_arquivos:
 
         for representanteAutor in div_parte_autor.find_all('span', {'class': 'nome_parte_representante'}):
         
-            nomeRepresentanteAutor = representanteAutor.text.strip()
-
-            nomeRepresentanteAutor = calculate_md5_hash(nomeRepresentanteAutor)            
+            nomeRepresentanteAutor = representanteAutor.text.strip()           
 
             match = re.search(r"\bOAB [A-Z0-9]+\b", nomeRepresentanteAutor)
 
             if match:
+
+                nomeRepresentanteAutorHash = calculate_md5_hash(nomeRepresentanteAutor) 
+
                 oab_string = match.group(0)
                 AttorneyCounsel = cnj['AttorneyCounsel/' + oab_string.split()[-1]]
 
                 OABRegistrationState = oab_string.split()[-1][:2]
 
                 g.add((AttorneyCounsel, RDF.type, cnj.AttorneyCounsel))
-                g.add((AttorneyCounsel, RDFS.label, Literal(nomeRepresentanteAutor)))
+                g.add((AttorneyCounsel, RDFS.label, Literal(nomeRepresentanteAutorHash)))
                 g.add((AttorneyCounsel, cnj.OAB_1, Literal(oab_string.split()[-1])))
                 g.add((AttorneyCounsel, cnj.OABRegistrationState, Literal(OABRegistrationState)))
                 
@@ -226,8 +229,8 @@ while counter != num_arquivos:
 
     counter += 1
 
-with open("outputFinal.ttl", "w", encoding="utf-8") as f:
-    f.write(g.serialize(format="turtle"))
+with open("outputFinal.rdf", "w", encoding="utf-8") as f:
+    f.write(g.serialize(format="xml"))
 
 print("End!")
 
